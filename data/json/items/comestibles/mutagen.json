@@ -251,6 +251,15 @@
     "use_action": { "type": "mutagen_iv", "mutation_category": "MOUSE" }
   },
   {
+    "id": "iv_mutagen_hyena",
+    "copy-from": "iv_mutagen_flavor",
+    "type": "COMESTIBLE",
+    "name": "hyena serum",
+    "description": "A super-concentrated mutagen with the color of the dirt of african savannah.  You need a syringe to inject it...  if you really want to?",
+    "color": "brown",
+    "use_action": { "type": "mutagen_iv", "mutation_category": "HYENA" }
+  },
+  {
     "id": "mutagen",
     "copy-from": "mutagen_flavor",
     "type": "COMESTIBLE",
@@ -427,6 +436,13 @@
     "type": "COMESTIBLE",
     "name": "mouse mutagen",
     "use_action": { "type": "mutagen", "mutation_category": "MOUSE" }
+  },
+  {
+    "id": "mutagen_hyena",
+    "copy-from": "mutagen_flavor",
+    "type": "COMESTIBLE",
+    "name": "hyena mutagen",
+    "use_action": { "type": "mutagen", "mutation_category": "HYENA" }
   },
   {
     "id": "purifier",
