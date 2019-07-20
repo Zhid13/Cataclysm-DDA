@@ -380,7 +380,7 @@
     "points": 2,
     "description": "You eat faster, and can eat and drink more, than anyone else!  You also enjoy food more; delicious food is better for your morale, and you don't mind unsavory meals as much.  Activate to skip prompt for overeating.",
     "starting_trait": true,
-    "category": [ "MOUSE", "LUPINE" ],
+    "category": [ "MOUSE", "LUPINE", "HYENA" ],
     "valid": false,
     "active": true
   },
@@ -1885,7 +1885,7 @@
     "bodytemp_modifiers": [ 250, 500 ],
     "bodytemp_sleep": 100,
     "description": "Light fur has grown to cover your entire body, providing slight protection from cold.",
-    "category": [ "CHIMERA", "SPIDER", "MOUSE" ],
+    "category": [ "CHIMERA", "SPIDER", "MOUSE", "HYENA" ],
     "types": [ "SKIN" ],
     "prereqs": [ "SKIN_ROUGH" ],
     "changes_to": [ "FUR", "FELINE_FUR", "LUPINE_FUR", "URSINE_FUR", "CHITIN_FUR" ]
@@ -1950,6 +1950,20 @@
     "prereqs": [ "LIGHTFUR" ],
     "leads_to": [ "LYNX_FUR" ],
     "category": [ "BEAST", "FELINE", "MOUSE" ]
+  },
+  {
+    "type": "mutation",
+    "id": "HYENA_FUR",
+    "name": "Coarse Fur",
+    "points": 2,
+    "visibility": 10,
+    "ugliness": 3,
+    "bodytemp_modifiers": [ 250, 500 ],
+    "bodytemp_sleep": 300,
+    "description": "You've grown coarse spotted fur, providing some protection from cold.",
+    "types": [ "SKIN" ],
+    "prereqs": [ "LIGHTFUR" ],
+    "category": [ "HYENA" ]
   },
   {
     "type": "mutation",
@@ -2735,7 +2749,7 @@
     "visibility": 1,
     "description": "The bottoms of your feet are strongly padded.  You receive no movement penalty for not wearing shoes, and even receive a 10% bonus when moving barefoot.",
     "types": [ "LEGS" ],
-    "category": [ "BEAST", "URSINE", "FELINE", "LUPINE" ]
+    "category": [ "BEAST", "URSINE", "FELINE", "LUPINE", "HYENA" ]
   },
   {
     "type": "mutation",
@@ -2821,7 +2835,7 @@
     "points": 2,
     "description": "Your digestive system is specialized to allow you to consume decaying material.  You can eat rotten food, albeit for less nutrition than usual.",
     "cancels": [ "HERBIVORE", "RUMINANT" ],
-    "category": [ "TROGLOBITE", "CHIMERA" ]
+    "category": [ "TROGLOBITE", "CHIMERA", "HYENA" ]
   },
   {
     "type": "mutation",
@@ -2912,7 +2926,7 @@
     "description": "Eating rotting, long-dead flesh is good for the struggle, and safe--if still completely unappealing--for you.",
     "prereqs": [ "EATPOISON" ],
     "threshreq": [ "THRESH_CHIMERA", "THRESH_RAT", "THRESH_MOUSE" ],
-    "category": [ "RAT", "CHIMERA", "MOUSE" ],
+    "category": [ "RAT", "CHIMERA", "MOUSE", "HYENA" ],
     "valid": false
   },
   {
@@ -3192,7 +3206,7 @@
     "description": "You have a long, fluffy-furred tail.  It greatly improves your balance, making your ability to dodge much higher.  Prevents wearing non-fabric pants.",
     "types": [ "TAIL" ],
     "prereqs": [ "TAIL_LONG" ],
-    "category": [ "BEAST", "LUPINE" ],
+    "category": [ "BEAST", "LUPINE", "HYENA" ],
     "restricts_gear": [ "LEG_L", "LEG_R" ],
     "allow_soft_gear": true,
     "social_modifiers": { "lie": -20, "persuade": 10 },
@@ -3442,7 +3456,7 @@
       "THRESH_SPIDER"
     ],
     "cancels": [ "PACIFIST" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER" ]
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "HYENA" ]
   },
   {
     "type": "mutation",
@@ -3468,7 +3482,7 @@
       "THRESH_SPIDER"
     ],
     "cancels": [ "PACIFIST" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER" ],
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "LUPINE", "FELINE", "URSINE", "LIZARD", "SPIDER", "HYENA" ],
     "passive_mods": { "int_mod": -1 }
   },
   {
@@ -3499,7 +3513,7 @@
     "prereqs": [ "CARNIVORE" ],
     "prereqs2": [ "PRED3", "PRED4" ],
     "threshreq": [ "THRESH_BEAST", "THRESH_RAPTOR", "THRESH_CHIMERA", "THRESH_URSINE", "THRESH_LIZARD", "THRESH_SPIDER" ],
-    "category": [ "BEAST", "RAPTOR", "CHIMERA", "URSINE", "LIZARD", "SPIDER" ],
+    "category": [ "BEAST", "RAPTOR", "CHIMERA", "URSINE", "LIZARD", "SPIDER", "HYENA" ],
     "flags": [ "CANNIBAL" ]
   },
   {
@@ -3634,6 +3648,18 @@
     "types": [ "EARS" ],
     "category": [ "LUPINE" ],
     "hearing_modifier": 1.75
+  },
+  {
+    "type": "mutation",
+    "id": "HYENA_EARS",
+    "name": "Hyena Ears",
+    "points": 1,
+    "visibility": 4,
+    "ugliness": 2,
+    "description": "Your ears have extended into short, pointed ones, like those of a hyena.  They enhance your hearing, allowing you to hear at greater distances.",
+    "types": [ "EARS" ],
+    "category": [ "HYENA" ],
+    "hearing_modifier": 1.60
   },
   {
     "type": "mutation",
@@ -3890,7 +3916,7 @@
     "prereqs": [ "STR_UP_2" ],
     "changes_to": [ "STR_UP_4" ],
     "leads_to": [ "MUT_TOUGH" ],
-    "category": [ "CHIMERA", "LUPINE", "TROGLOBITE" ],
+    "category": [ "CHIMERA", "LUPINE", "TROGLOBITE", "HYENA" ],
     "passive_mods": { "str_mod": 4 }
   },
   {
@@ -4425,7 +4451,7 @@
     "visibility": 4,
     "ugliness": 3,
     "description": "Your face and jaw have begun...changing.  Masks and such fit OK, but you're noticeably mutated.",
-    "changes_to": [ "BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MINOTAUR", "MUZZLE", "MUZZLE_BEAR", "MUZZLE_LONG", "MUZZLE_RAT" ],
+    "changes_to": [ "BEAK", "BEAK_HUM", "BEAK_PECK", "PROBOSCIS", "MINOTAUR", "MUZZLE", "MUZZLE_BEAR", "MUZZLE_LONG", "MUZZLE_RAT", "MUZZLE_HYENA" ],
     "category": [ "FELINE" ]
   },
   {
@@ -4464,6 +4490,29 @@
       "body_part": "MOUTH",
       "chance": 18,
       "base_damage": { "damage_type": "cut", "amount": 4 }
+    }
+  },
+  {
+    "type": "mutation",
+    "id": "HYENA_MUZZLE",
+    "name": "Hyena Muzzle",
+    "points": -2,
+    "visibility": 5,
+    "ugliness": 4,
+    "mixed_effect": true,
+    "description": "Your jaw and nose have extended into a muzzle like that of a hyena.  It delievers the stronger bite among all mammals and looks ok, but prevents wearing mouthgear.",
+    "types": [ "MUZZLE" ],
+    "prereqs": [ "SNOUT" ],
+    "category": [ "HYENA" ],
+    "restricts_gear": [ "MOUTH" ],
+    "social_modifiers": { "intimidate": 7 },
+    "attacks": {
+      "attack_text_u": "You bite at %s",
+      "attack_text_npc": "%1$s bites and harries %2$s",
+      "blocker_mutations": [ "FANGS" ],
+      "body_part": "MOUTH",
+      "chance": 20,
+      "base_damage": { "damage_type": "cut", "amount": 10 }
     }
   },
   {
@@ -4819,7 +4868,7 @@
     "prereqs": [ "CLAWS", "CLAWS_RETRACT", "CLAWS_RAT" ],
     "cancels": [ "TALONS" ],
     "changes_to": [ "PAWS_LARGE" ],
-    "category": [ "LUPINE", "RAT", "FELINE" ]
+    "category": [ "LUPINE", "RAT", "FELINE", "HYENA" ]
   },
   {
     "type": "mutation",
@@ -5322,7 +5371,7 @@
     "mixed_effect": true,
     "description": "You have a growling, rough voice.  Persuading NPCs will be more difficult, but threatening them will be easier.",
     "changes_to": [ "SNARL" ],
-    "category": [ "RAT", "URSINE", "LUPINE" ],
+    "category": [ "RAT", "URSINE", "LUPINE", "HYENA" ],
     "social_modifiers": { "persuade": -20, "lie": -10, "intimidate": 10 }
   },
   {
@@ -5333,7 +5382,7 @@
     "mixed_effect": true,
     "description": "You have a threatening snarl in your voice.  Persuading NPCs will be near impossible, but threatening them will be much easier.",
     "prereqs": [ "GROWL" ],
-    "category": [ "BEAST", "CHIMERA", "FELINE", "LUPINE" ],
+    "category": [ "BEAST", "CHIMERA", "FELINE", "LUPINE", "HYENA" ],
     "social_modifiers": { "persuade": -60, "lie": -40, "intimidate": 20 }
   },
   {
@@ -5884,6 +5933,16 @@
     "purifiable": false,
     "threshold": true,
     "flags": [ "mycus" ]
+  },
+  {
+    "type": "mutation",
+    "id": "THRESH_HYENA",
+    "name": "Hyena",
+    "points": 1,
+    "description": "You feel less like crying for this new twisted world and more like laughing at it.",
+    "valid": false,
+    "purifiable": false,
+    "threshold": true
   },
   {
     "type": "mutation",

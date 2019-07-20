@@ -264,5 +264,14 @@
     "mutagen_message": "You feel a desire to curl up in a nice, warm pile of... shredded paper.",
     "iv_message": "You feel... small.  But comfortable.",
     "memorial_message": "Found the cheese."
+  },
+  {
+  	"type": "mutation_category",
+  	"id": "HYENA",
+  	"name": "Hyena",
+  	"threshold_mut": "THRESH_HYENA",
+  	"mutagen_message": "You feel a weird desire to whoop and cackle which passes as suddenly as it came",
+  	"iv_message": "A few giggles and cackles escape your mouth before you can shut it",
+  	"memorial_message": "Found a new place in the circle of life"
   }
 ]
